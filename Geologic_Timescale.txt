@@ -1,0 +1,1 @@
+System	Fint	LintOrdovician	485.4	443.8Silurian	443.8	419.2Devonian	419.2	358.9Carboniferous	358.9	298.9Permian	298.9	251.9Triassic	251.9	201.3Jurassic	201.3	145.0Cretaceous	145.0	66.0Paleogene	66.0	23.0Neogene_to_present	23.0	0

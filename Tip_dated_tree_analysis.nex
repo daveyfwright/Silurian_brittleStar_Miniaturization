@@ -1,0 +1,135 @@
+
+#NEXUS
+
+BEGIN DATA;
+
+DIMENSIONS  NTAX=25 NCHAR=68;
+
+FORMAT DATATYPE=STANDARD GAP=- MISSING=?;
+
+Matrix
+Aganaster_gregarius			10110?10101??001011100010100100010?11112112111111111010112?????10112
+Eugasterella_thorni			1000110???0???0000000010?0??10200110000010011000001??1010?????1?1001
+Strataster_ohioensis		1000110???0???0010100010?0??112001100000??011000001??1000?????1?1001
+Pradesura_jacobi			1000100???0???001000??00?0??111001000000??001000000??1110?????2?1000
+Ophiaulax_decheni			00110?0???1200110001??010100100000?1111111111110111??10112?????10112
+Stephanoura_belgica			10000?10101200110001??010100112000?11111112111111111?11112?????10112
+Ophiurina_armoricana		00000?0???0???100001??010110110??0?011????211010111??1110?????0?011?
+Ophiurina_lymani			0000100???0???100001??00?100110000?011????211111113??1110?????0?011?
+Lapworthura_miltoni			1000100???0???001010??00?0??11300100010???011001000??1110?????0?1001
+Hallaster_cylindricus		10000?0???0???000010??00?0??11200100010010011001000101110?????0?1001
+Furcaster_leptosoma			10000?0???0???0000100000?0??11300110112110011000003101220?????3?1004
+Eospondylus_primigenius		10000?0???0???001000??00?0??11300100112111010001003101200?????3?1004
+Muldaster_duplantieri		??????????????????????00?0??111000?0110111111011111101020?????0?0111
+Ophiopetagno_paicei			????????????????????????????11??????110111011??1111101020?????0?1111
+Onychaster_flexilis			10000?0???0???000010??00?0??10111100112010010000003001200?????3?100?
+Vandelooaster_plicatilis	01000?0???0???000010??00?0??0????110000???011000001000??????????1001
+Cheiropteraster_giganteus	0100100???0???000010??00?0??0????10000000?011000001000??????????1001
+Crepidosoma_wenlocki		10000?0???0???1000?0??10?0??0????0?0000???011000001000??????????0001
+Encrinaster_goldfussi		1000100???0???100010??00?0??0????0?000000?011000001000??????????0001
+Ophiura_ophiura				10110?1110150101011100010101101110?11112112110100011112010?????10012
+Ophiocten_sericeum			10110?1010150101011100010101112000?11112112110100021112010?????10012
+Ophiothrix_fragilis			1011101202141001001112011101113000?111121121100010110110110121?00013
+Ophiopholis_aculeata		1010101102141001111112011111112000?111121121100000110110110121?00013
+Ophiacantha_bidentata		1000111111130001011100010100113000?111121121111100211111110020?00012
+Ophiocomina_nigra			1000111011131001111100011101113000?111121121101110210111110020?00012
+;
+END;
+
+begin mrbayes;
+
+
+[Clade constraints]
+
+constraint node1 = Eugasterella_thorni Strataster_ohioensis Vandelooaster_plicatilis Cheiropteraster_giganteus Crepidosoma_wenlocki Encrinaster_goldfussi;
+constraint node2 = Eugasterella_thorni Strataster_ohioensis;
+constraint node3 = Vandelooaster_plicatilis Cheiropteraster_giganteus Crepidosoma_wenlocki Encrinaster_goldfussi;
+constraint node4 = Vandelooaster_plicatilis Cheiropteraster_giganteus;
+constraint node5 = Crepidosoma_wenlocki Encrinaster_goldfussi;
+constraint node6 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiurina_lymani Lapworthura_miltoni Hallaster_cylindricus Furcaster_leptosoma Eospondylus_primigenius Muldaster_duplantieri Ophiopetagno_paicei Onychaster_flexilis Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node7 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiurina_lymani Furcaster_leptosoma Eospondylus_primigenius Muldaster_duplantieri Ophiopetagno_paicei Onychaster_flexilis Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node8 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiurina_lymani Muldaster_duplantieri Ophiopetagno_paicei Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node9 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiurina_lymani Muldaster_duplantieri Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node10 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiurina_lymani Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node11 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiurina_armoricana Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node12 = Aganaster_gregarius Ophiaulax_decheni Stephanoura_belgica Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node13 = Aganaster_gregarius Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node14 = Ophiura_ophiura Ophiocten_sericeum Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node15 = Ophiura_ophiura Ophiocten_sericeum;
+constraint node16 = Ophiothrix_fragilis Ophiopholis_aculeata Ophiacantha_bidentata Ophiocomina_nigra;
+constraint node17 = Ophiothrix_fragilis Ophiopholis_aculeata Ophiocomina_nigra;
+constraint node18 = Ophiothrix_fragilis Ophiopholis_aculeata;
+constraint node19 = Furcaster_leptosoma Eospondylus_primigenius Onychaster_flexilis;
+constraint node20 = Eospondylus_primigenius Onychaster_flexilis;
+
+prset topologypr = constraints(node1,node2,node3,node4,node5,node6,node7,node8,node9,node10,node11,node12,node13,node14,node15,node16,node17,node18,node19,node20);
+
+[CHARACTER MODELS]
+
+[Basic Mk w/ lognormally distributed rate variation]
+
+lset nbetacat=5 rates=lnorm Coding=informative; 
+prset symdirihyperpr=fixed(infinity);		
+
+	
+
+
+[Stratigraphic age constraints for fossil data, extant taxa treated as extant]
+
+calibrate Pradesura_jacobi = uniform(477.7,	485.4);
+calibrate Eugasterella_thorni = uniform(382.7, 393.3);
+calibrate Strataster_ohioensis = uniform(350, 358.9);
+calibrate Vandelooaster_plicatilis = uniform(342.8, 345.3);
+calibrate Cheiropteraster_giganteus = uniform(402.5, 407.6);
+calibrate Crepidosoma_wenlocki = uniform(433.4, 438.5);
+calibrate Encrinaster_goldfussi = uniform(402.5, 407.6);
+calibrate Lapworthura_miltoni = uniform(419.2, 421.3);
+calibrate Hallaster_cylindricus = uniform(445.2, 453);
+calibrate Onychaster_flexilis = uniform(342.8, 347);
+calibrate Eospondylus_primigenius = uniform(402.5, 407.6);
+calibrate Muldaster_duplantieri = uniform(428.2, 429.4);
+calibrate Ophiopetagno_paicei = uniform(428.12, 429.27);
+calibrate Furcaster_leptosoma = uniform(433.4, 438.5);
+calibrate Ophiurina_lymani = uniform(402.5, 407.6);
+calibrate Ophiurina_armoricana = uniform(402.5, 407.6);
+calibrate Stephanoura_belgica = uniform(358.9, 364.7);
+calibrate Ophiaulax_decheni = uniform(358.9, 364.7);
+calibrate Aganaster_gregarius = uniform(342.8, 345.3);
+
+
+
+
+[FOSSILIZED BIRTH DEATH MODEL & ASSOCIATED PARAMETERS]
+	prset treeagepr = uniform(485.4, 521.0);	[wide prior, assumes ophuiroids split from other echinoderms sometime between the middle Cambrian (Miolingian) to start of the Ordovician]
+    prset brlenspr=clock:fossilization;			[SA-FBD prior on trees]
+   	prset speciationpr = uniform(0.01,10); 		[broad, vague prior]
+	prset extinctionpr = beta(1,1);				[flat prior]
+	prset fossilizationpr = beta(2,2);			[hump-shaped distribution]	
+	prset samplestrat = diversity 10: 485.4 0, 443.8 0, 419.2 0,358.9 0, 298.9 0, 251.9 0, 201.3 0, 145.0 0, 66 0, 23 0;  [gives different diversificaiton & sampling dynamics for intervals of different geological periods]
+	prset sampleprob = 0.003; [~ proportion of extant ophiuroid taxa sampled]
+	
+[CLOCK PRIORS]
+    [all set to broad, vague priors]
+	prset clockratepr = normal(0.0025,0.1);		
+   	prset clockvarpr=igr;
+    prset igrvarpr = uniform(0.0001, 200); 
+	prset nodeagepr = calibrated; 
+	
+[MCMC SETTINGS]
+	mcmcp ngen=10000000 relburnin=yes burninfrac=0.25 printfreq=1000 samplefreq=5000 nchains=2 nruns=2 savebrlens=yes;    
+
+[RUN ANALYSIS]
+	mcmc;
+	sump;
+	sumt;
+ 
+end;
+
+
+
+
+
+
+
+
+
