@@ -472,7 +472,7 @@ return(St.E)
 
 magnitude.test <- function(sim.values){
 
-IE <- c(); ME <- c(); LE <- c()
+IE <- c(); ME <- c(); LE <- c(); M <- rev(M)
 
 for (i in 1:Nsim){
 	
@@ -482,9 +482,9 @@ for (i in 1:Nsim){
 	
 }
 
-Pr_IE <- length(which(IE <= M[1] - M[3])) / Nsim; 
-Pr_ME <- length(which(IE <= M[4] - M[6])) / Nsim; 
-Pr_LE <- length(which(IE <= M[7] - M[9])) / Nsim; 
+Pr_IE <- length(which(IE >= M[1] - M[3])) / Nsim; 
+Pr_ME <- length(which(IE >= M[4] - M[6])) / Nsim; 
+Pr_LE <- length(which(IE >= M[7] - M[9])) / Nsim; 
 
 print(paste("test statistic =", M[1] - M[3],", Probability of the observed magnitude of size decrease across the Ireviken Event = ", Pr_IE))
 print(paste("test statistic =", M[4] - M[6],", Probability of the observed magnitude of size decrease across the Mulde Event = ", Pr_ME))
