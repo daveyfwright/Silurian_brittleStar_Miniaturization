@@ -1,8 +1,7 @@
 # Library of phylo-related functions (dependent on 'ape') that might be useful here and some that just streamline viewing the output for very specific analysis/plots
 
-# Functions to simulate brittle star size evolution and Monte Carlo analyses to obtain probabilities of extinction patterns begin on line 363
 
-# by David F. Wright (We are 138!)
+# by David F. Wright 
 
 # Function to get posterior probabilities of a taxon being a sampled ancestor
 # Note the the "trees" argument must be a post-burn-in sample of the posterior distribution
@@ -491,36 +490,4 @@ print(paste("test statistic =", M[4] - M[6],", Probability of the observed magni
 print(paste("test statistic =", M[7] - M[9],", Probability of the observed magnitude of size decrease across the Lau Event = ", Pr_LE))
 
 }
-
-
-# test for the directionality of sustained size decrease across Mulde and Lau Events
-
-directional.test <- function(sim.values){
-
-ME <- rep(0,Nsim); LE <- rep(0,Nsim)
-
-	for (i in 1:Nsim){
-	
-		if (sim.values$sim.means[i,4] > sim.values$sim.means[i,5] && sim.values$sim.means[i,5] > sim.values$sim.means[i,6]){
-		
-		ME[i] <- 1
-		
-		}	
-	
-		if (sim.values$sim.means[i,7] > sim.values$sim.means[i,8] && sim.values$sim.means[i,8] > sim.values$sim.means[i,9]){
-		
-		LE[i] <- 1
-		
-		}		
-
-	}
-
-Pr_ME <- length(which(ME == 1)) / Nsim; 
-Pr_LE <- length(which(LE == 1)) / Nsim; 
-
-print(paste("Probability of sustained size decrease across the Mulde Event = ", Pr_ME))
-print(paste("Probability of sustained size decrease across the Lau Event = ", Pr_LE))
-
-}
-
 
