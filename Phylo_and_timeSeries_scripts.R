@@ -108,10 +108,3 @@ sim.values <- sim.Gotland.Series(Nsim, occ_times, Nsamples, M, SD, bootstrap.M =
 # test magnitude of change per extinction event, i.e, whether change from begining to end of each extinction event differs from a null distributon
 
 magnitude.test(sim.values) # Ireviken p = 0.0003, for Mulde and Lau p < 0.00001
-
-# test for the directionality of sustained size decrease across Mulde and Lau Events
-
-# this test is very difficult to reject the null--must have ~large sustained changes
-directional.test(sim.values) # Mulde Event p = 0.18 (NS); Lau Event p = 0.05
-
-
